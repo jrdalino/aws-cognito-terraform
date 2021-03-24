@@ -5,7 +5,7 @@ aws_role    = "OrganizationAccountAccessRole"
 
 # Tagging
 namespace       = "bbsdm"
-bounded_context = "shared"
+bounded_context = "user"
 environment     = "production"
 
 # Cognito User Pool
