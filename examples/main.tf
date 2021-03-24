@@ -1,4 +1,4 @@
-module "congito" {
+module "cognito" {
   source = "git::https://github.com/jrdalino/aws-cognito-terraform.git?ref=main"
   # General
   aws_region  = var.aws_region

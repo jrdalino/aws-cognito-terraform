@@ -47,6 +47,6 @@ output "aws_cognito_user_pool_client_client_secret" {
 }
 
 output "aws_cognito_user_pool_client_id" {
-  value       = module.cognito.this.aws_cognito_user_pool_client_id
+  value       = module.cognito.aws_cognito_user_pool_client_id
   description = "The id of the user pool cli client."
 }
