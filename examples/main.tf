@@ -17,9 +17,22 @@ module "cognito" {
   aws_cognito_user_pool_domain_domain = var.aws_cognito_user_pool_domain_domain
 
   # Cognito User Pool Client
-  aws_cognito_user_pool_client_name                         = var.aws_cognito_user_pool_client_name
-  aws_cognito_user_pool_client_allowed_oauth_flows          = var.aws_cognito_user_pool_client_allowed_oauth_flows
-  aws_cognito_user_pool_client_callback_urls                = var.aws_cognito_user_pool_client_callback_urls
-  aws_cognito_user_pool_client_logout_urls                  = var.aws_cognito_user_pool_client_logout_urls
-  aws_cognito_user_pool_client_supported_identity_providers = var.aws_cognito_user_pool_client_supported_identity_providers
+  aws_cognito_user_pool_client_name = var.aws_cognito_user_pool_client_name
+  access_token_validity = var.access_token_validity
+  allowed_oauth_flows_user_pool_client = var.allowed_oauth_flows_user_pool_client
+  allowed_oauth_flows = var.allowed_oauth_flows
+  allowed_oauth_scopes = var.allowed_oauth_scopes
+  # analytics_configuration
+  callback_urls = var.callback_urls
+  default_redirect_uri = var.default_redirect_uri
+  explicit_auth_flows = var.explicit_auth_flows
+  generate_secret = var.generate_secret
+  id_token_validity = var.id_token_validity
+  logout_urls = var.logout_urls
+  prevent_user_existence_errors = var.prevent_user_existence_errors
+  # read_attributes  
+  refresh_token_validity = var.refresh_token_validity
+  supported_identity_providers = var.supported_identity_providers
+  # token_validity_units
+  # write_attributes
 }

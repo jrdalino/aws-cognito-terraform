@@ -49,30 +49,30 @@ resource "aws_cognito_user_pool" "this" {
 
 # User Pool Domain
 resource "aws_cognito_user_pool_domain" "this" {
-  domain       = var.aws_cognito_user_pool_domain_domain #"bbsdm"
+  domain       = var.aws_cognito_user_pool_domain_domain
   user_pool_id = aws_cognito_user_pool.this.id
   # certificate_arn 
 }
 
 # Cognito User Pool Client
 resource "aws_cognito_user_pool_client" "this" {
-  name         = var.aws_cognito_user_pool_client_name
-  user_pool_id = aws_cognito_user_pool.this.id
-  # access_token_validity
-  # allowed_oauth_flows_user_pool_client
-  allowed_oauth_flows = [var.aws_cognito_user_pool_client_allowed_oauth_flows]
-  # allowed_oauth_scopes = ["phone", "email", "openid"] # >> What do I choose?
+  name                                 = var.aws_cognito_user_pool_client_name
+  user_pool_id                         = aws_cognito_user_pool.this.id
+  access_token_validity                = var.access_token_validity
+  allowed_oauth_flows_user_pool_client = var.allowed_oauth_flows_user_pool_client
+  allowed_oauth_flows                  = var.allowed_oauth_flows
+  allowed_oauth_scopes                 = var.allowed_oauth_scopes
   # analytics_configuration
-  callback_urls = [var.aws_cognito_user_pool_client_callback_urls]
-  # default_redirect_uri
-  explicit_auth_flows = ["ALLOW_CUSTOM_AUTH", "ALLOW_USER_SRP_AUTH", "ALLOW_REFRESH_TOKEN_AUTH"] # >> What do I choose?
-  generate_secret     = true
-  # id_token_validity
-  logout_urls                   = [var.aws_cognito_user_pool_client_logout_urls]
-  prevent_user_existence_errors = "ENABLED"
+  callback_urls                 = var.callback_urls
+  default_redirect_uri          = var.default_redirect_uri
+  explicit_auth_flows           = var.explicit_auth_flows
+  generate_secret               = var.generate_secret
+  id_token_validity             = var.id_token_validity
+  logout_urls                   = var.logout_urls
+  prevent_user_existence_errors = var.prevent_user_existence_errors
   # read_attributes
-  # refresh_token_validity
-  supported_identity_providers = [var.aws_cognito_user_pool_client_supported_identity_providers]
+  refresh_token_validity       = var.refresh_token_validity
+  supported_identity_providers = var.supported_identity_providers
   # token_validity_units
   # write_attributes
 }
