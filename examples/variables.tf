@@ -49,7 +49,7 @@ variable "aws_cognito_user_pool_client_name" {
 }
 
 variable "access_token_validity" {
-  type        = string
+  type        = number
   description = "(Optional) Time limit, between 5 minutes and 1 day, after which the access token is no longer valid and cannot be used. This value will be overridden if you have entered a value in token_validity_units."
 }
 
@@ -94,7 +94,7 @@ variable "generate_secret" {
 }
 
 variable "id_token_validity" {
-  type        = string
+  type        = number
   description = "(Optional) Time limit, between 5 minutes and 1 day, after which the ID token is no longer valid and cannot be used. This value will be overridden if you have entered a value in token_validity_units."
 }
 
@@ -114,7 +114,7 @@ variable "prevent_user_existence_errors" {
 # }
 
 variable "refresh_token_validity" {
-  type        = string
+  type        = number
   description = "(Optional) Time limit in days refresh tokens are valid for."
 }
 
