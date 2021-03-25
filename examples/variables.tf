@@ -63,10 +63,10 @@ variable "allowed_oauth_flows" {
   description = "(Optional) List of allowed OAuth flows (code, implicit, client_credentials)."
 }
 
-# variable "allowed_oauth_scopes" {
-#   type        = list(string)
-#   description = "(Optional) List of allowed OAuth scopes (phone, email, openid, profile, and aws.cognito.signin.user.admin)."
-# }
+variable "allowed_oauth_scopes" {
+  type        = list(string)
+  description = "(Optional) List of allowed OAuth scopes (phone, email, openid, profile, and aws.cognito.signin.user.admin)."
+}
 
 # variable "analytics_configuration" {
 #   type        = string
