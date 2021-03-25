@@ -54,7 +54,7 @@ variable "access_token_validity" {
 }
 
 variable "allowed_oauth_flows_user_pool_client" {
-  type        = string
+  type        = bool
   description = "(Optional) Whether the client is allowed to follow the OAuth protocol when interacting with Cognito user pools."
 }
 
@@ -63,10 +63,10 @@ variable "allowed_oauth_flows" {
   description = "(Optional) List of allowed OAuth flows (code, implicit, client_credentials)."
 }
 
-variable "allowed_oauth_scopes" {
-  type        = list(string)
-  description = "(Optional) List of allowed OAuth scopes (phone, email, openid, profile, and aws.cognito.signin.user.admin)."
-}
+# variable "allowed_oauth_scopes" {
+#   type        = list(string)
+#   description = "(Optional) List of allowed OAuth scopes (phone, email, openid, profile, and aws.cognito.signin.user.admin)."
+# }
 
 # variable "analytics_configuration" {
 #   type        = string
@@ -89,7 +89,7 @@ variable "explicit_auth_flows" {
 }
 
 variable "generate_secret" {
-  type        = string
+  type        = bool
   description = "(Optional) Should an application secret be generated."
 }
 
