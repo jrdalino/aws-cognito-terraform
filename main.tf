@@ -73,6 +73,10 @@ resource "aws_cognito_user_pool_client" "this" {
   # read_attributes
   refresh_token_validity       = var.refresh_token_validity
   supported_identity_providers = var.supported_identity_providers
-  # token_validity_units
+  token_validity_units {
+    access_token = "minutes"
+    id_token = "minutes"
+    refresh_token = "days"
+  }
   # write_attributes
 }
