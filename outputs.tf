@@ -44,6 +44,7 @@ output "aws_cognito_user_pool_domain_certificate_arn" {
 output "aws_cognito_user_pool_client_client_secret" {
   value       = aws_cognito_user_pool_client.this.client_secret
   description = "The client secret of the user pool cli client."
+  sensitive   = true  
 }
 
 output "aws_cognito_user_pool_client_id" {
